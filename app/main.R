@@ -1,20 +1,30 @@
 box::use(
-  shiny[bootstrapPage, moduleServer, NS, renderText, tags, textOutput],
+  shiny[bootstrapPage, moduleServer, NS, renderText, tags, textOutput, div],
+  imola[flexPanel]
+)
+
+box::use(
+  app/view/content,
 )
 
 #' @export
 ui <- function(id) {
   ns <- NS(id)
-  bootstrapPage(
-    tags$h3(
-      textOutput(ns("message"))
-    )
+  div(
+    style = "margin-top:10px",
+    content$ui(id = ns("content"))
   )
+
+  # flexPanel(
+  #   # template = "small-large-small",
+  #   # columns = "5% 1fr",
+  #   div(content$ui(id = ns("content")))
+  # )
 }
 
 #' @export
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
-    output$message <- renderText("Hello!")
+    #content <- content$server("content")
   })
 }
