@@ -14,17 +14,10 @@ ui <- function(id) {
     style = "margin-top:10px",
     content$ui(id = ns("content"))
   )
-
-  # flexPanel(
-  #   # template = "small-large-small",
-  #   # columns = "5% 1fr",
-  #   div(content$ui(id = ns("content")))
-  # )
 }
 
 #' @export
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
-    #content <- content$server("content")
   })
 }

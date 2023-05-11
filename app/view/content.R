@@ -10,38 +10,29 @@ box::use(
 ui <- function(id) {
   ns <- NS(id)
   fluidPage(
-    theme = bs_theme(version=5),
-
+    theme = bs_theme(version = 5),
     fluidRow(
       column(3,
              bs_card(),
              bs_card()
       ),
       column(3,
-
-             
              bs_card(),
              bs_card()
       ),
       column(3,
-
-             
              bs_card(),
              bs_card()
       ),
       column(3,
-
-             
              bs_card(),
              bs_card(),
              bs_card(),
              bs_card()
       )
-      
     )
   )
-
-
 }
 
-server <- function(id) {}
+server <- function(id) {
+}
